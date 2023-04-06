@@ -47,19 +47,20 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.home:{
-                      //  getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, depedroHome).commit();
+
+                        getSupportFragmentManager().beginTransaction().replace(R.id.drawer, depedroHome).commit();
                         return true;
                     }
                     case R.id.download:{
-                        //getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,hinesDownload);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.drawer,hinesDownload).commit();
                         return true;
                     }
 
 
                 }
-               /* getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.framelayout, new DepedroHome())
-                        .commit();*/
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.drawer, new DepedroHome())
+                        .commit();
                 return false;
             }
         });
