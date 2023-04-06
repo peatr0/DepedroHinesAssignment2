@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/pedro_purple"
+    android:background="@color/pedro_purple"
     tools:context=".DepedroHome">
 
 
@@ -29,28 +29,30 @@
 
         android:layout_marginTop="198dp"
         android:layout_marginEnd="165dp"
+        android:layout_marginBottom="389dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/RandomNmbr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Random number" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/Randomtxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Random Text" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/Firebase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Firebase" />
 
     </RadioGroup>
 
@@ -59,13 +61,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
+        android:layout_marginTop="416dp"
         android:layout_marginEnd="194dp"
         android:layout_marginBottom="267dp"
-        android:text="Button"
+        android:text="Options"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
