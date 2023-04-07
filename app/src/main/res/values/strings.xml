@@ -4,4 +4,12 @@
     <string name="Open_Nav">Open Navigation Drawer</string>
     <string name="Close_Nav">Close Navigation Drawer</string>
 
+    <string-array name="list">
+        <item>Flower</item>
+        <item>Car</item>
+        <item>Planet</item>
+        <item>Urban</item>
+    </string-array>
+
+
 </resources>
