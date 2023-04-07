@@ -9,12 +9,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     DepedroHome depedroHome=new DepedroHome();
     HinesDownload hinesDownload=new HinesDownload();
+
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if(actionBarDrawerToggle.onOptionsItemSelected(item))
+        {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -48,19 +51,19 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case R.id.home:{
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.drawer, depedroHome).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent, depedroHome).commit();
                         return true;
                     }
                     case R.id.download:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.drawer,hinesDownload).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,hinesDownload).commit();
                         return true;
                     }
 
 
                 }
-                getSupportFragmentManager().beginTransaction()
+                /*getSupportFragmentManager().beginTransaction()
                         .replace(R.id.drawer, new DepedroHome())
-                        .commit();
+                        .commit();*/
                 return false;
             }
         });
@@ -73,7 +76,5 @@ public class MainActivity extends AppCompatActivity {
 
             drawerLayout.closeDrawer(GravityCompat.START);
         }else super.onBackPressed();
-
-
     }
 }
