@@ -48,8 +48,8 @@ public class DepedroHome extends Fragment {
                    textView.setText(String.valueOf(random));
                 } else if (radioButton2.isChecked())
                 {
-                    String generatedString = RandomStringUtils.randomAlphabetic(10);
-
+                    String generatedString=random.ints(minRandom,maxRandom+1).limit(10).collect(StringBuilder::new,StringBuilder::appendCodePoint,StringBuilder::append).toString();
+                    textView.setText(String.valueOf(generatedString));
                 }
             }
         });
