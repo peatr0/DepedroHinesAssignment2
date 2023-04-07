@@ -15,6 +15,7 @@
         android:textAlignment="center" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listfrag"
         android:layout_width="match_parent"
         android:layout_height="254dp"
         android:layout_marginBottom="335dp"
