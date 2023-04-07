@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import java.util.Random;
+import java.util.stream.Collectors;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +21,6 @@ public class DepedroHome extends Fragment {
     RadioButton radioButton1,radioButton2,radioButton3;
     Button button;
     Random random;
-    int Random;
-    int minRandom=-50;
-    int maxRandom=50;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,23 +35,34 @@ public class DepedroHome extends Fragment {
                              Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.depedro_home, container, false);
+        textView=(view).findViewById(R.id.textView);
+        radioButton1=(view).findViewById(R.id.RandomNmbr);
+        radioButton2=(view).findViewById(R.id.Randomtxt);
+
+
         button=(view).findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Random r=new Random();
-                if (radioButton1.isChecked())
-                {
+                Random r = new Random();
+                if (radioButton1.isChecked()) {
+                    int minRandom = -50;
+                    int maxRandom = 50;
+                    int randomNumber = r.nextInt(maxRandom - minRandom + 1) + minRandom;
+                    textView.setText(String.valueOf(randomNumber));
+                } else if (radioButton2.isChecked()) {
+                    int min = 97; // 'a' in ASCII
+                    int max = 122; // 'z' in ASCII
+                    String generatedString = r.ints(min, max + 1)
+                            .limit(10)
+                            .mapToObj(i -> String.valueOf((char) i))
+                            .collect(Collectors.joining());
 
-                   Random = r.nextInt(maxRandom-minRandom+1)+minRandom;
-                   textView.setText(String.valueOf(random));
-                } else if (radioButton2.isChecked())
-                {
-                    String generatedString=random.ints(minRandom,maxRandom+1).limit(10).collect(StringBuilder::new,StringBuilder::appendCodePoint,StringBuilder::append).toString();
-                    textView.setText(String.valueOf(generatedString));
+                    textView.setText(generatedString);
                 }
             }
         });
+
 
         return view;
     }
