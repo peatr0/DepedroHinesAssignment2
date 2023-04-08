@@ -12,6 +12,9 @@
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
+        android:outlineSpotShadowColor="@color/pedro_green"
+        android:max="5"
+        android:progress="0"
         android:layout_height="40dp" />
 
     <ListView
