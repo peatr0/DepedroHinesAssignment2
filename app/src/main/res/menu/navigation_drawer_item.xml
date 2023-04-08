@@ -16,4 +16,10 @@
         android:title="download"
         />
 
+    <item
+        android:id="@+id/n01455125Weather"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="n01455125Weather"
+        />
+
 </menu>
