@@ -47,7 +47,6 @@ public class HinesDownload extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view= inflater.inflate(R.layout.hines_download, container, false);
         imageView=(view).findViewById(R.id.imageView1);
         listView = view.findViewById(R.id.listView1);
@@ -84,7 +83,7 @@ public class HinesDownload extends Fragment {
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        progressBar.setVisibility(View.GONE);
+                       // progressBar.setVisibility(View.GONE);
                         return false;
                     }
                 })
@@ -97,6 +96,7 @@ public class HinesDownload extends Fragment {
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        progressBar.setVisibility(View.GONE);
                                         imageView.setImageDrawable(resource);
                                     }
                                 });
