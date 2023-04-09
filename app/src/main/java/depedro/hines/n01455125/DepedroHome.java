@@ -14,8 +14,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import depedro.hines.n01455125.databinding.ActivityMainBinding;
+
 
 public class DepedroHome extends Fragment {
+    FirebaseDatabase db;
+    DatabaseReference reference;
+    ActivityMainBinding binding;
     TextView textView;
     RadioGroup radioGroup;
     RadioButton radioButton1,radioButton2,radioButton3;
@@ -26,21 +34,21 @@ public class DepedroHome extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // Initialize Firebase database and reference
+        db = FirebaseDatabase.getInstance();
+        reference = db.getReference("random_data"); // Choose a reference name for your data
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view= inflater.inflate(R.layout.depedro_home, container, false);
         textView=(view).findViewById(R.id.textView);
         radioButton1=(view).findViewById(R.id.RandomNmbr);
         radioButton2=(view).findViewById(R.id.Randomtxt);
-
-
         button=(view).findViewById(R.id.button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +58,10 @@ public class DepedroHome extends Fragment {
                     int maxRandom = 50;
                     int randomNumber = r.nextInt(maxRandom - minRandom + 1) + minRandom;
                     textView.setText(String.valueOf(randomNumber));
+
+                    // Send data to Firebase database
+                    reference.child("number").setValue(randomNumber);
+
                 } else if (radioButton2.isChecked()) {
                     int min = 97; // 'a' in ASCII
                     int max = 122; // 'z' in ASCII
@@ -59,10 +71,12 @@ public class DepedroHome extends Fragment {
                             .collect(Collectors.joining());
 
                     textView.setText(generatedString);
+
+                    // Send data to Firebase database
+                    reference.child("string").setValue(generatedString);
                 }
             }
         });
-
 
         return view;
     }
