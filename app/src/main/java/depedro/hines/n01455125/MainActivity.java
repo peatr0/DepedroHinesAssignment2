@@ -16,7 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
     DepedroHome depedroHome=new DepedroHome();
     HinesDownload hinesDownload=new HinesDownload();
-    n01455125Weather n01455125Weather=new n01455125Weather();
+    n01455125Weather n01455125weather=new n01455125Weather();
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                     case R.id.n01455125Weather:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,n01455125Weather).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,n01455125weather).commit();
                         return true;
                     }
 

@@ -1,41 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/pedro_nxtColor"
+    android:background="@color/pedro_blue"
     android:id="@+id/n01455125Weather"
-    tools:context=".n01455125Weather">
-
+    >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="n01455125"
-        android:textAlignment="center"/>
+        android:id="@+id/student_id_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N1343242"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
 
     <RadioGroup
+        android:id="@+id/temperature_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_below="@+id/student_id_text_view"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+        <RadioButton
+            android:id="@+id/celsius_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Celsius"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/fahrenheit_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fahrenheit"/>
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/city_spinner"
+        android:layout_width="82dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/temperature_radio_group"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/lat_textview"
+        android:layout_width="139dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/city_spinner"
+        android:text="TextView"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/lon_textview"
+        android:layout_width="139dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/lat_textview"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/city_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fahrenheit" />
+        android:text="TextView"
+        android:layout_below="@+id/lon_textview"/>
 
-    <RadioButton
-        android:id="@+id/radioButton3"
+    <TextView
+        android:id="@+id/humidity_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="celsius" />
+        android:text="TextView"
+        android:layout_below="@+id/city_textview"/>
 
-    />
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/humidity_textview"
+        />
 
+    <TextView
+        android:id="@+id/description_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/name_textview"/>
 
+    <TextView
+        android:id="@+id/temp_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/description_textview"/>
 
-
-
-</LinearLayout>
+</RelativeLayout>
