@@ -5,6 +5,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     DepedroHome depedroHome=new DepedroHome();
     HinesDownload hinesDownload=new HinesDownload();
     n01455125Weather n01455125weather=new n01455125Weather();
-
+    DBScreen DBScreen=new DBScreen();
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         drawerLayout=findViewById(R.id.drawer);
         navigationView=findViewById(R.id.nav_view);
@@ -61,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.n01455125Weather:{
                         getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,n01455125weather).commit();
+                        return true;
+                    }
+                    case R.id.DBScreen:{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent, DBScreen).commit();
                         return true;
                     }
 

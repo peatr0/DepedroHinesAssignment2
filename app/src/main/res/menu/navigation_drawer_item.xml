@@ -22,4 +22,10 @@
         android:title="n01455125Weather"
         />
 
+    <item
+        android:id="@+id/DBScreen"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="DBScreen"
+        />
+
 </menu>
