@@ -8,14 +8,14 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/mainContent"
+        android:id="@+id/depedro_mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/depedro_nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/header"

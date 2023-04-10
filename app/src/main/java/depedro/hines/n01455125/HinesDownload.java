@@ -1,3 +1,8 @@
+/*
+Name:Depedro Hines
+Section: Mobile programming CENG 258-ONB
+Student#:n01455125
+ */
 package depedro.hines.n01455125;
 
 import android.graphics.drawable.Drawable;

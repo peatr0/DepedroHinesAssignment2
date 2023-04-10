@@ -1,3 +1,8 @@
+/*
+Name:Depedro Hines
+Section: Mobile programming CENG 258-ONB
+Student#:n01455125
+ */
 package depedro.hines.n01455125;
 
 import androidx.annotation.NonNull;
@@ -46,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent, depedroHome).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent, depedroHome).commit();
 
 
         drawerLayout=findViewById(R.id.drawer);
-        navigationView=findViewById(R.id.nav_view);
+        navigationView=findViewById(R.id.depedro_nav_view);
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.Open_Nav,R.string.Close_Nav);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -75,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDrawerClosed(@NonNull View drawerView) {
-                // Show a short duration Toast message with a text
                 Toast.makeText(MainActivity.this,getText( R.string.pedro), Toast.LENGTH_SHORT).show();
 
             }
@@ -91,27 +95,27 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.home:{
+                    case R.id.depedro_home:{
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent, depedroHome).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent, depedroHome).commit();
                         DrawerLayout drawer = findViewById(R.id.drawer);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;
                     }
-                    case R.id.download:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,hinesDownload).commit();
+                    case R.id.depedro_download:{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent,hinesDownload).commit();
                         DrawerLayout drawer = findViewById(R.id.drawer);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;
                     }
-                    case R.id.n01455125Weather:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent,n01455125weather).commit();
-                        DrawerLayout drawer = findViewById(R.id.nav_view);
+                    case R.id.depedro_n01455125Weather:{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent,n01455125weather).commit();
+                        DrawerLayout drawer = findViewById(R.id.depedro_nav_view);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;
                     }
-                    case R.id.DBScreen:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.mainContent, DBScreen).commit();
+                    case R.id.depedro_DBScreen:{
+                        getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent, DBScreen).commit();
                         DrawerLayout drawer = findViewById(R.id.drawer);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;

@@ -4,26 +4,26 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/depedro_home"
         android:icon="@drawable/ic_baseline_favorite"
         android:title="home"
         />
 
 
     <item
-        android:id="@+id/download"
+        android:id="@+id/depedro_download"
         android:icon="@drawable/ic_baseline_search"
         android:title="download"
         />
 
     <item
-        android:id="@+id/n01455125Weather"
+        android:id="@+id/depedro_n01455125Weather"
         android:icon="@android:drawable/ic_menu_compass"
         android:title="n01455125Weather"
         />
 
     <item
-        android:id="@+id/DBScreen"
+        android:id="@+id/depedro_DBScreen"
         android:icon="@android:drawable/btn_star_big_on"
         android:title="DBScreen"
         />
