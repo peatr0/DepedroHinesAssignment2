@@ -8,14 +8,14 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/initial"
+        android:id="@+id/depedro_initial"
         android:layout_width="match_parent"
         android:layout_height="114dp"
         android:text="@string/hello_blank_fragment"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/modfield_txt"
+        android:id="@+id/depedro_modfield_txt"
         android:layout_width="132dp"
         android:layout_height="73dp"
         android:layout_below="@+id/initial"
@@ -24,10 +24,12 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/database_btn"
+        android:id="@+id/depedro_database_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
+
+
 
 
 </LinearLayout>

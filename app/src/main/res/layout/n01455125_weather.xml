@@ -7,95 +7,95 @@
     >
 
     <TextView
-        android:id="@+id/student_id_text_view"
+        android:id="@+id/depedro_student_id_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="N1343242"
+        android:text="@string/n01455125"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
 
     <RadioGroup
-        android:id="@+id/temperature_radio_group"
+        android:id="@+id/depedro_temperature_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/student_id_text_view"
+        android:layout_below="@+id/depedro_student_id_text_view"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp">
 
         <RadioButton
-            android:id="@+id/celsius_radio_button"
+            android:id="@+id/depedro_celsius_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Celsius"
+            android:text="@string/celsius"
             android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/fahrenheit_radio_button"
+            android:id="@+id/depedro_fahrenheit_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fahrenheit"/>
+            android:text="@string/fahrenheit"/>
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/city_spinner"
+        android:id="@+id/depedro_city_spinner"
         android:layout_width="82dp"
         android:layout_height="52dp"
-        android:layout_below="@+id/temperature_radio_group"
+        android:layout_below="@+id/depedro_temperature_radio_group"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/lat_textview"
-        android:layout_width="139dp"
-        android:layout_height="72dp"
-        android:layout_below="@+id/city_spinner"
-        android:text="TextView"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/lon_textview"
-        android:layout_width="139dp"
-        android:layout_height="39dp"
-        android:layout_below="@+id/lat_textview"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/city_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/lon_textview"/>
-
-    <TextView
-        android:id="@+id/humidity_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/city_textview"/>
-
-    <TextView
-        android:id="@+id/name_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/humidity_textview"
+        android:id="@+id/depedro_lat_textview"
+        android:layout_width="108dp"
+        android:layout_height="56dp"
+        android:layout_below="@+id/depedro_city_spinner"
+        android:text="@string/no_data"
         />
 
     <TextView
-        android:id="@+id/description_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/name_textview"/>
+        android:id="@+id/depedro_lon_textview"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
+        android:layout_below="@+id/depedro_lat_textview"
+        android:text="@string/no_data" />
 
     <TextView
-        android:id="@+id/temp_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_below="@+id/description_textview"/>
+        android:id="@+id/depedro_city_textview"
+        android:layout_width="141dp"
+        android:layout_height="63dp"
+        android:layout_below="@+id/depedro_lon_textview"
+        android:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/depedro_humidity_textview"
+        android:layout_width="139dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/depedro_city_textview"
+        android:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/depedro_name_textview"
+        android:layout_width="144dp"
+        android:layout_height="61dp"
+        android:layout_below="@+id/depedro_humidity_textview"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/depedro_description_textview"
+        android:layout_width="141dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/depedro_name_textview"
+        android:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/depedro_temp_textview"
+        android:layout_width="141dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/depedro_description_textview"
+        android:text="@string/no_data" />
 
 </RelativeLayout>

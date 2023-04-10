@@ -29,20 +29,21 @@ public class DepedroHome extends Fragment {
     RadioButton radioButton1,radioButton2,radioButton3;
     Button button;
     Random random;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Initialize Firebase database and reference
         db = FirebaseDatabase.getInstance();
-        reference = db.getReference("random_data"); // Choose a reference name for your data
+        reference = db.getReference("random_data");
+        reference= db.getReference("storeddata");
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view= inflater.inflate(R.layout.depedro_home, container, false);
         textView=(view).findViewById(R.id.textView);
         radioButton1=(view).findViewById(R.id.RandomNmbr);
@@ -61,20 +62,37 @@ public class DepedroHome extends Fragment {
 
                     // Send data to Firebase database
                     reference.child("number").setValue(randomNumber);
+                    String name = getString(R.string.name);
+                    String studentid = getString(R.string.student);
+                    String fullName = name + " " + studentid;
+                    reference.child("string").setValue(fullName);
+
 
                 } else if (radioButton2.isChecked()) {
                     int min = 97; // 'a' in ASCII
                     int max = 122; // 'z' in ASCII
+
                     String generatedString = r.ints(min, max + 1)
                             .limit(10)
                             .mapToObj(i -> String.valueOf((char) i))
                             .collect(Collectors.joining());
 
                     textView.setText(generatedString);
-
-                    // Send data to Firebase database
+                    String name = getString(R.string.name);
+                    String studentid = getString(R.string.student);
+                    String fullName = name + " " + studentid;
+                    reference.child("storeddata").setValue(fullName);
                     reference.child("string").setValue(generatedString);
+                } if (radioButton3 != null && radioButton3.isChecked()) {
+                    String initial=getString(R.string.initial);
+                    String name = getString(R.string.name);
+                    String studentid = getString(R.string.student);
+                    String fullName = name + " " + studentid;
+                    reference.child("storeddata").setValue(fullName);
+                    textView.setText(initial);
                 }
+
+
             }
         });
 

@@ -34,11 +34,11 @@ public class DBScreen extends Fragment {
 
         // Initialize Firebase database and reference
         reference = FirebaseDatabase.getInstance().getReference("random_data");
-
+        reference = FirebaseDatabase.getInstance().getReference("storeddata");
         // Initialize TextView
-        mTextView = rootView.findViewById(R.id.modfield_txt);
+        mTextView = rootView.findViewById(R.id.depedro_modfield_txt);
 
-        Button button = rootView.findViewById(R.id.database_btn);
+        Button button = rootView.findViewById(R.id.depedro_database_btn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -47,16 +47,16 @@ public class n01455125Weather extends Fragment {
         View rootView = inflater.inflate(R.layout.n01455125_weather, container, false);
 
         // Initialize UI elements
-        citySpinner = rootView.findViewById(R.id.city_spinner);
-        lonTextView = rootView.findViewById(R.id.lon_textview);
-        latTextView = rootView.findViewById(R.id.lat_textview);
-        countryTextView = rootView.findViewById(R.id.city_textview);
-        humidityTextView = rootView.findViewById(R.id.humidity_textview);
-        nameTextView = rootView.findViewById(R.id.name_textview);
-        descriptionTextView = rootView.findViewById(R.id.description_textview);
-        tempTextView = rootView.findViewById(R.id.temp_textview);
-        celsiusRadioButton = rootView.findViewById(R.id.celsius_radio_button);
-        fahrenheitRadioButton = rootView.findViewById(R.id.fahrenheit_radio_button);
+        citySpinner = rootView.findViewById(R.id.depedro_city_spinner);
+        lonTextView = rootView.findViewById(R.id.depedro_lon_textview);
+        latTextView = rootView.findViewById(R.id.depedro_lat_textview);
+        countryTextView = rootView.findViewById(R.id.depedro_city_textview);
+        humidityTextView = rootView.findViewById(R.id.depedro_humidity_textview);
+        nameTextView = rootView.findViewById(R.id.depedro_name_textview);
+        descriptionTextView = rootView.findViewById(R.id.depedro_description_textview);
+        tempTextView = rootView.findViewById(R.id.depedro_temp_textview);
+        celsiusRadioButton = rootView.findViewById(R.id.depedro_celsius_radio_button);
+        fahrenheitRadioButton = rootView.findViewById(R.id.depedro_fahrenheit_radio_button);
 
         String[] city = getResources().getStringArray(R.array.Cities);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
@@ -135,13 +135,13 @@ public class n01455125Weather extends Fragment {
                 JSONObject jsonObject = new JSONObject(result);
 
                 // Extract the temperature, humidity, and description from the API response
-                JSONObject mainObject = jsonObject.getJSONObject("main");
-                double temperature = mainObject.getDouble("temp");
-                int humidity = mainObject.getInt("humidity");
+                JSONObject mainObject = jsonObject.getJSONObject(getString(R.string.main_path));
+                double temperature = mainObject.getDouble(getString(R.string.temp_path));
+                int humidity = mainObject.getInt(getString(R.string.humidity_path));
 
-                JSONArray weatherArray = jsonObject.getJSONArray("weather");
+                JSONArray weatherArray = jsonObject.getJSONArray(getString(R.string.weather_path));
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
-                String description = weatherObject.getString("description");
+                String description = weatherObject.getString(getString(R.string.description_path));
 
                 // Update the UI with the retrieved data
                 updateWeatherUI(temperature, humidity, description);
@@ -158,10 +158,10 @@ public class n01455125Weather extends Fragment {
         if (fahrenheitRadioButton.isChecked()) {
             temp = temperature * 1.8 + 32;
         }
-        tempTextView.setText(String.format("%.2f °C", temp));
+        tempTextView.setText(String.format(getString(R.string.celsius_con), temp));
 
         // Update the humidity and description
-        humidityTextView.setText(String.format("Humidity: %d%%", humidity));
+        humidityTextView.setText(String.format(getString(R.string.humidity_con), humidity));
         descriptionTextView.setText(description);
 
         // Get the selected city's name
@@ -176,8 +176,8 @@ public class n01455125Weather extends Fragment {
         double[] latLong = getLatLong(cityName, getContext());
 
         // Display the latitude and longitude values
-        lonTextView.setText(String.format("Longitude: %.2f", latLong[1]));
-        latTextView.setText(String.format("Latitude: %.2f", latLong[0]));
+        lonTextView.setText(String.format(getString(R.string.longitude_con), latLong[1]));
+        latTextView.setText(String.format(getString(R.string.latitude_con), latLong[0]));
     }
     // Helper method to get the country name for a given city
     private String getCountryName(String city, Context context) {

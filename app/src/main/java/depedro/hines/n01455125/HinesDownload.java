@@ -53,8 +53,8 @@ public class HinesDownload extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.hines_download, container, false);
-        imageView=(view).findViewById(R.id.imageView1);
-        listView = view.findViewById(R.id.listView1);
+        imageView=(view).findViewById(R.id.depedro_imageView1);
+        listView = view.findViewById(R.id.depedro_listView1);
         urls=getResources().getStringArray(R.array.urls);
         list = getResources().getStringArray(R.array.list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
@@ -64,13 +64,12 @@ public class HinesDownload extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 listView.setSelector(android.R.color.holo_blue_dark);
-                // String selectedOption = list[position];
                 String imageUrl = urls[position];
                 downloadImage(imageUrl);
             }
         });
 
-        progressBar = view.findViewById(R.id.progressBar1);
+        progressBar = view.findViewById(R.id.depedro_progressBar1);
 
         return view;
     }
