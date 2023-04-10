@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.depedro_n01455125Weather:{
                         getSupportFragmentManager().beginTransaction().replace(R.id.depedro_mainContent,n01455125weather).commit();
-                        DrawerLayout drawer = findViewById(R.id.depedro_nav_view);
+                        DrawerLayout drawer = findViewById(R.id.drawer);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;
                     }
